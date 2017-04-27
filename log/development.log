@@ -4301,3 +4301,88 @@ Processing by PortfoliosController#angular as HTML
 Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-04-26 21:48:08 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mBlog Load (1.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  [1m[36mSkill Load (0.6ms)[0m  [1m[34mSELECT "skills".* FROM "skills"[0m
+  Rendered pages/home.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 154ms (Views: 135.0ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2017-04-26 21:48:13 -0600
+Processing by PortfoliosController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/iryola/Documents/DevCamp/DevcampPortfolio/app/models/portfolio.rb:16: syntax error, unexpected ':'
+      self.main_image: "http://placehold.it/600x400"
+                      ^
+/home/iryola/Documents/DevCamp/DevcampPortfolio/app/models/portfolio.rb:17: syntax error, unexpected ':'
+      self.thumb_image: "http://placehold.it/350x200"
+                       ^):
+  
+app/models/portfolio.rb:16: syntax error, unexpected ':'
+app/models/portfolio.rb:17: syntax error, unexpected ':'
+app/controllers/portfolios_controller.rb:3:in `index'
+  Rendering /home/iryola/.rvm/gems/ruby-2.4.0@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/iryola/.rvm/gems/ruby-2.4.0@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/iryola/.rvm/gems/ruby-2.4.0@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendering /home/iryola/.rvm/gems/ruby-2.4.0@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/iryola/.rvm/gems/ruby-2.4.0@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/iryola/.rvm/gems/ruby-2.4.0@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/iryola/.rvm/gems/ruby-2.4.0@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.4ms)
+  Rendered /home/iryola/.rvm/gems/ruby-2.4.0@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.7ms)
+Started GET "/portfolios" for 127.0.0.1 at 2017-04-26 21:49:17 -0600
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (4.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  Rendered portfolios/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 32ms (Views: 21.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/portfolio/1" for 127.0.0.1 at 2017-04-26 21:49:54 -0600
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering portfolios/show.html.erb within layouts/application
+  Rendered portfolios/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 24.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/portfolios/new" for 127.0.0.1 at 2017-04-26 21:49:58 -0600
+Processing by PortfoliosController#new as HTML
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2017-04-26 21:50:14 -0600
+Processing by PortfoliosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QXdvIsWBA+7TAUqXfuOfMPiNM202UXe4uZ89EEvYMpONN3ZWEW9xAi3J5n461Hn7TyEWSGxkOEB6AgpWPsPLXA==", "portfolio"=>{"title"=>"My default", "subtitle"=>"yup yup yup", "body"=>"l;jkasdfl;ksaf"}, "commit"=>"Create Portfolio"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "portfolios" ("title", "subtitle", "body", "main_image", "thumb_image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "My default"], ["subtitle", "yup yup yup"], ["body", "l;jkasdfl;ksaf"], ["main_image", "http://placehold.it/600x400"], ["thumb_image", "http://placehold.it/350x200"], ["created_at", 2017-04-27 03:50:14 UTC], ["updated_at", 2017-04-27 03:50:14 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/portfolios
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2017-04-26 21:50:14 -0600
+Processing by PortfoliosController#index as HTML
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  Rendered portfolios/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/portfolio/10" for 127.0.0.1 at 2017-04-26 21:50:25 -0600
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering portfolios/show.html.erb within layouts/application
+  Rendered portfolios/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.8ms)
+
+
