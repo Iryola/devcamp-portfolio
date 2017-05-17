@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  validates_presence_of :name
+   validates_presence_of :name
 
   def first_name
     self.name.split.first
