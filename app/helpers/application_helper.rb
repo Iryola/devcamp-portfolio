@@ -15,4 +15,8 @@ module ApplicationHelper
     content_tag(:p, greeting, class: "source-greeting")
     end
   end
+
+  def copyright_generator
+    StevenViewTool::Renderer.copyright 'Steven Adams', 'All right reserved'
+  end
 end

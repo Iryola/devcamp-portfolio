@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/Iryola/steven_view_tool
+  revision: 5d88006bf50f5adb6c86d016a9ea31737669c1f5
+  specs:
+    steven_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -198,6 +204,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
+  steven_view_tool!
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
