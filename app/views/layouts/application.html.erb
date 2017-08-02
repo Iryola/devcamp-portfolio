@@ -17,13 +17,23 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
 
-    <%= render "shared/application_nav" %>
+          <%= video_tag(
+            'HardDrivePhotojpeg.mp4',
+              id: 'background',
+              autoplay: true,
+              loop: true,
+              muted: true,
+              poster: 'home_bg.png'
+            )
+          %>
 
-    <%= yield %>
+        <%= render "shared/application_nav" %>
 
-    <%= render "shared/application_footer" %>
+        <%= yield %>
 
-    <%= source_helper("application") %>
+        <%= render "shared/application_footer" %>
+
+        <%= source_helper("application") %>
         </div>
       </div>
     </div>

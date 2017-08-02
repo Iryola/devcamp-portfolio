@@ -1,3 +1,11 @@
 /config/secrets.yml
 /log
 /tmp
+.env
+/.bundle
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+.byebug_history
+/public/
