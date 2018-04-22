@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   get 'about-me', to: 'pages#about'
   get 'contact', to: 'pages#contact'
+  get 'tech-news', to: 'pages#tech_news'
 
   resources :blogs do
     member do
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  mount ActionCable.server => '/cable'
+  
   root to: 'pages#home'
 end
 

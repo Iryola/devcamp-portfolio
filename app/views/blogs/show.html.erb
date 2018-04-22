@@ -9,6 +9,16 @@
   <%= @blog.body %>
  </p>
 
+ <!-- Start of comment form -->
+  <%= render 'comments/comment_form' %>
+ <!-- End of comment form -->
+
+
+ <!-- Start of comments -->
+ <div id="comments" data-blog-id="<%= @blog.id %>">
+  <%= render @blog.comments %>
+ </div>
+ <!-- End of comments -->
 
 </div>
 
